@@ -1,15 +1,14 @@
 Crank Mechanism visualization
 ===
 
+## Why?
+
+The main goal is to have a codebase, repo where I could experiment with HTML 5 `<canvas>` API.
+
+
+## What?
+
 Crank mechanism is a mechanism where the rod attached to the piston influences the motion of a brick on a surface, creating a reciprocating motion. The physical concept you might be referring to is somewhat similar to a slider-crank mechanism, which is often used in mechanical engineering.
-
-
-## Inspired by
-
-https://x.com/math_cat21/status/1748994383108509823?s=20
-
-
-## Info
 
 
 - [Reciprocating motion](https://en.wikipedia.org/wiki/Reciprocating_motion) ("Зворотно-поступальний рух")
@@ -32,3 +31,8 @@ https://x.com/math_cat21/status/1748994383108509823?s=20
 - [Connecting rod](https://en.wikipedia.org/wiki/Connecting_rod) ("шатун")
 
 > A connecting rod, also called a 'con rod', is the part of a piston engine which connects the piston to the crankshaft. Together with the crank, the connecting rod converts the reciprocating motion of the piston into the rotation of the crankshaft.
+
+
+## Inspired by
+
+https://x.com/math_cat21/status/1748994383108509823?s=20
