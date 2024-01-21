@@ -4,8 +4,8 @@ const ctx = canvas.getContext('2d');
 const connectingRodLength = 200;
 const pistonRadius = 20;
 const rodLength = 100;
-const brickWidth = 120; // Double the size
-const brickHeight = 60; // Double the size
+const brickWidth = 120;
+const brickHeight = 60;
 
 // Define rod object with initial position far right
 const rod = {
@@ -46,7 +46,7 @@ function drawCarEngine(theta) {
   // Draw circle
   ctx.beginPath();
   ctx.arc(circleCenterX, circleCenterY, connectingRodLength, 0, 2 * Math.PI);
-  ctx.strokeStyle = 'black'; // Set color to black
+  ctx.strokeStyle = 'black';
   ctx.stroke();
 
   // Draw horizontal surface line
@@ -66,23 +66,35 @@ function drawCarEngine(theta) {
   ctx.fillStyle = 'brown';
   ctx.fillRect(brickX, brickY, brickWidth, brickHeight);
 
+  // Draw piston
+  ctx.strokeStyle = 'blue';
+  ctx.fillStyle = 'blue';
+  ctx.beginPath();
+  ctx.arc(pistonX, pistonY, pistonRadius, 0, 2 * Math.PI);
+  ctx.fill();
+  ctx.stroke();
+
   // Draw connecting rod
+  ctx.lineWidth = 3;
+  ctx.strokeStyle = 'green';
   ctx.beginPath();
   ctx.moveTo(rod.Xa, rod.Ya); // Start from the piston
   ctx.lineTo(rod.Xb, rod.Yb); // Draw to the right side of the rod
-  ctx.strokeStyle = 'green'; // Set color to green
   ctx.stroke();
 
-  // Draw piston
-  ctx.beginPath();
-  ctx.arc(pistonX, pistonY, pistonRadius, 0, 2 * Math.PI);
-  ctx.fillStyle = 'blue';
-  ctx.fill();
-  ctx.stroke();
+  // Note. Drawing rod after piston so that rod's color was on front
+  // Note. Drawing rod after brick so that rod's color was on front
 }
 
 function animate() {
-  const angularSpeed = 0.02; // Adjust the speed as needed
+  // term "angular" refers to the rotation or angle of the crank mechanism. 
+  // The variable angularSpeed represents the speed at which the angle (rotation) of the crank mechanism changes over time. 
+  // It's the rate of rotation, often measured in radians per frame or per second.
+  const angularSpeed = 0.02;
+
+  // In trigonometry and mathematics, θ (theta) is a commonly used symbol to represent an angle. 
+  // In the context of your code, the variable theta is the angle of rotation for the crank mechanism. 
+  // It determines the current position of various components (such as the piston, rod, and brick) in the mechanism.
   let theta = 0;
 
   function update() {
