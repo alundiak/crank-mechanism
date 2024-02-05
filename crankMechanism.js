@@ -75,6 +75,7 @@ function drawCarEngine(theta) {
   ctx.stroke();
 
   // Draw connecting rod
+  // TBD use Math.hypot() somehow https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/hypot
   ctx.lineWidth = 3;
   ctx.strokeStyle = 'green';
   ctx.beginPath();
